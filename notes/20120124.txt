@@ -1,0 +1,177 @@
+Notes for Jan 24 meeting
+
+On the Criteris To Be Used in Decomposing Systems into Modules
+D.L. Parnas
+http://sunnyday.mit.edu/16.355/parnas-criteria.html
+
+ACM 1972
+
+Paper about Modularization Techniques
+
+/* To be honest, I didn't fully understand this paper or how it got on the list. */
+
+He starts off with a quote from another 70's era book which presents the benefits of modularlization, but not the criteria you use to divide a problem up into modules.  The author calls this "decompisition".
+
+"...little need for communication" in Expected Benefits of Modular Programming kind-of threw me.
+
+Module is considered to be a Responsibility Assignment rather than a subprogram.
+
+The modularizations include the design decisions which must be made before the work on independent modules begin.
+  /* That is to say, do some up-front design to figure out what the scope of each Responsibility Assignment is */
+
+
+KWIC Index Production System
+  1.  Accepts an ordered set of Lines; Each Line is an ordered set of Words;  Each Word is an ordered set of Characters
+  2.  Any line may be "Circularly shifted" by repeatedly removing the first word and appending it at the end of the line.
+      T0:  L1:  abc def ghi jkm
+      T1:  L2:  def ghi jkm abc
+  3.  KWIC index system outputs a listing of all circular shifts of all lines in alphabetical order
+
+Wikipedia has KWIC covered at http://en.wikipedia.org/wiki/Key_Word_in_Context
+  aka. permuted index
+Lord of the Rings titles...
+  1.  The Fellowship of the Ring
+  2.  The Two Towers
+  3.  The Return of the King
+...becomes...
+  1b.  Fellowship of the Ring The
+  3e.  King The Return of the
+  3b.  Return of the King The
+  1e.  Ring The Fellowship of the
+  1a.  The Fellowship of the Ring
+  3a.  The Return of the King
+  2a.  The Two Towers
+  2c.  Towers The Two
+  2b.  Two Towers The
+  3c.  of the King The Return
+  1c.  of the Ring The Fellowship
+  3d.  the King The Return of
+  1d.  the Ring The Fellowship of
+
+/* This link was cool too:  http://coronet.iicm.edu/sa/assign/2/assign.html */
+/* This link was useful too in figuring out what these modules are supposed to do:  goo.gl/K2TT8 */
+
+Modularization 1:
+  /* I totally miss the point, or even the correctness of "Module 1: Input...the characters are packed four to a word"  are Thermometer and There the same "word" in this scheme? */
+  /* I think it is "cute" that they are doing this all in memory.  MAP:REDUCE, no? */
+
+  At the end of Modularization 1 he asserts "Experiments on a small scale indicate that this is approximately the decomposition which would be proposed by most programmers for the task specified.".  I think I kind-of agree.  His modules show the functional breakdown of what needs done.
+
+Modularization 2:
+  Module 1:  Line Storage
+    /* Note the slippery slope to checked exceptions; "...there are certain restrictions...violated the routines "trap" to an error-handling subroutine WHICH IS TO BE PROVIDED BY THE USERS of the routine".  Checked Exceptions sound simply like flipping this on its head; I caller tell you that you have to deal with this...its up to you what to do about it. */
+
+  Module 3: Circular Shifter
+    if ( i < j ) {
+      // Shifts of line i precede the shifts of line j
+    } else {
+      // Shifts of line j precede the shifts of line i
+    }
+    /* I think this messes up my "Lord of the Rings" derivation above.  ALL Fellowships should come first, then ALL Return, finally ALL Towers. */
+    /* Also, the original is ALWAYS first Ex. "The Fellowship of the Ring" */
+       1a.  The Fellowship of the Ring
+       1b.  Fellowship of the Ring The
+       1c.  of the Ring The Fellowship
+       1d.  the Ring The Fellowship of
+       1e.  Ring The Fellowship of the
+       2a.  The Two Towers
+       2b.  Two Towers The
+       2c.  Towers The Two
+       3a.  The Return of the King
+       3b.  Return of the King The
+       3c.  of the King The Return
+       3d.  the King The Return of
+       3e.  King The Return of the
+
+
+    /* I guess I don't understand why the CircularShifter gets setup with the whole of LineStorage lines rather than a reference to LineStorage that it can pull from.  Meh. */
+
+  Module 4:  Alphabetizer
+    Formal definitions of these functions are given [8]. /* What?  8 is a reference to the article we are reading?!? */
+    /* I think he says that the derivation is made this by the Alphabetizer */
+       1b.  Fellowship of the Ring The
+       3e.  King The Return of the
+       3b.  Return of the King The
+       1e.  Ring The Fellowship of the
+       1a.  The Fellowship of the Ring
+       3a.  The Return of the King
+       2a.  The Two Towers
+       2c.  Towers The Two
+       2b.  Two Towers The
+       3c.  of the King The Return
+       1c.  of the Ring The Fellowship
+       3d.  the King The Return of
+       1d.  the Ring The Fellowship of
+
+    /* AHHH.  ITH(i) returns an index INTO WHAT?  The CircularShifter? */
+
+Comparason of the Two Modularizations
+  /* THIS IS DRIVING ME CRAZY "Modularization I vs Modularization 2" should be "Modularization I and Modularization II" or "1 vs 2" or keep them in the same notation...geez.  This guy must already have been tenured. */
+
+  Modularization 1        Modularization 2
+    1.  Input             Line Storage
+    2.  Circular Shift    Input
+    3.  Alphabetizing     Circular Shifter
+    4.  Output            Alphabetizer
+    5.  Master Control    Output
+    6.                    Master Control
+
+  "The difference between the two alternatives are in the way that they are divided into the work assignments, and the interfaces between modules"
+
+  What may change?
+    1.  Input format
+        /* Impact is the same on both Modularizations */
+
+    2.  All lines stored in core
+        /* Modularization 1 is screwed if this comes to pass.  All Mod 1 modules change. */
+        /* Modularization 2 changes only Line Storage (I think) */
+
+    3.  Pack the characters 4 to a word /* I need this to change as I don't understand the original requirement! */
+        /* Modularization 1 is screwed if this comes to pass.  All Mod 1 modules change because they all share the format of the line storage. */
+        /* Modularization 2 isolates the impact of this to the Line Storage module */
+
+    4.  Decision to make an index of the circular shifts rather than just store them that way
+        /* I hated this decision too and see it as likely to change.  I don't understand why Circular Shift wouldn't just be done statelessly on an individual input line.  With lines stable, he can always do this on demand, no?  */
+        /* Modularization 1 is screwed as its Alphabetizer and Output modules have dependencies back to Circular Shift so they would be impacted by this. */
+        /* Modularization 2 isolates the impact to CircularShifter */
+
+    5.  Decision to Alphabetize the list once
+        a.  search for each item when needed
+        b.  partially alphabetize 
+        /* Modularization 1 has tighty bound Alphabetizing to Output, so they both have to change */
+        /* Modularization 2 isolates the impact to Alphabetizer */
+
+Modularization 1
+  - defines its interfaces in terms of "fairly complex formats and table organizations"
+  - to understand any individual module you must understand all that comes before
+
+Modularization 2
+  - abstract interfaces; function names, parameter constraints, output type.
+  - modules can be understood in terms of themselves (his subjective opinion)
+
+The Criteria
+  - Modularization 1 was "Flowchart driven".
+  - Modularization 2 was based upon "information hiding".
+  - "Every module...is characterized by its knowledge of a design decision which it hides from all others.  Its interface or definition was chosen to reveal as little as possible about its inner workings."
+
+
+Improvement in Circular Shift
+  - Hindsight suggests that the proposed implementation reveals more than is necessary
+  - Programs could be effectively written if we specified only...
+    1.  that the lines indicated in circular shift's current definition will all exist in the table
+    2.  that no one of them would be included twice
+    3.  that an additional function existed which would allow us to identify the original line given the shift.
+  - /* THAT'S WHAT I'M TALKING ABOUT! */
+  /* The Circular Shifter always seemed to me to be virtually stateless.  Give it a String, it spits out the shifted derivations. */
+
+/* At Efficiency and Implementation he warns that the Modularization 2 design could suffer efficience problems, and I agree */
+
+"...the order in time in which processing is expected to take place should not be used in making the decomposition into modules.  It further provides evidence that a careful job of decomposition can result in considerable carryover of work from one project to another."
+
+Conclusions
+  1.  it is almost always incorrect to begin the decomposition of a system into modules on the basis of a flowchart.
+  2.  Begins with a list of difficult design decisions or identify design decisions which are likely to change.
+  3.  Design each module to hide such a decision from the others.
+  4.  Modules will not correspond to steps in the processing.
+  5.  Something about allowing modules to be assembled from other modules
+
