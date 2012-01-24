@@ -8,7 +8,7 @@ Jan 24 - Piotr Wyrwinski:  A Note On Distributed Computing - Jim Waldo, Geoff Wy
 Feb 14:  No meeting
 
 Feb 28 - Dan Kirkdorffer:  The Next 700 Programming Languages - P. J. Landin
-Feb 28 - Stuart Maclean:  Can Programming Be Liberated from the von Neumann Style? - John Backus
+Feb 28 - ???:  Can Programming Be Liberated from the von Neumann Style? - John Backus
 
 Mar 13 - Doug Pearson:  Reflections on Trusting Trust - Ken Thompson
 Mar 13 - Stan Dyck:  Lisp: Good News, Bad News, How to Win Big - Richard Gabriel
