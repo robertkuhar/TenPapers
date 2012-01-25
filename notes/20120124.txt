@@ -175,3 +175,5 @@ Conclusions
   4.  Modules will not correspond to steps in the processing.
   5.  Something about allowing modules to be assembled from other modules
 
+18 participants
+Doug will do "Trust" paper on Feb 28.  Stuart is moved to Mar 13 for "von Neumann Liberatation".
