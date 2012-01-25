@@ -10,7 +10,7 @@ Paper about Modularization Techniques
 
 /* To be honest, I didn't fully understand this paper or how it got on the list. */
 
-He starts off with a quote from another 70's era book which presents the benefits of modularlization, but not the criteria you use to divide a problem up into modules.  The author calls this "decompisition".
+He starts off with a quote from another 70's era book, which presents the benefits of modularization, but not the criteria you use to divide a problem up into modules.  The author calls this "decomposition".
 
 "...little need for communication" in Expected Benefits of Modular Programming kind-of threw me.
 
