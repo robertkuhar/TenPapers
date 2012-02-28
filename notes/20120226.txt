@@ -1,0 +1,76 @@
+The Next 700 Programming Languages
+P.J. Landin
+July 1965
+
+Describes a "Family of unimplemented computing languages"
+
+"The design of a specific language splits into two independent parts...one is the choice of written appearances...the other is the choice of abstract entities"
+
+"The system is biased towards "expressions" rather than "statements"...purely functional"
+
+/* I think he is asserting that computer languages themselves exert too great an influence over the solutions implemented in them. */
+
+Most programming languages are...
+  1.  A way of expressing things in terms of other things
+  2.  A basic set of given things
+
+The author is attempting to disentangle these two with a new programming language.
+
+ISWIM is an attempt at a general purpose system for describing things in terms of other things, that can be Problem-oriented by appropriate choices of "primitives".
+
+It is not one language, but a family of languages
+  he asserts that all languages go this path once there is more than one implementation
+
+/* Hmmm.  Is he saying that a language should not be directly implemented?  But implementations should be made that immediately change the language?  I'm not out of the intro and I am confused. */
+
+"Church without lambda" footnote makes me smile.
+
+recondite:  little-known or hidden from sight
+pedantic:  narrowly, stodgily, and often obstenatiously learned
+eponymous:  of, relating to, or being the person or thing for whom or which something is named
+amelioration:  to make better or more
+pedagogy:  The method and practice of teaching, esp. as an academic subject or theoretical concept.
+amelioration:  the act of relieving ills and changing for the better.
+dyadic:  based on two
+recalcitrant:  Having an obstinately uncooperative attitude toward authority.
+
+"...and hence is equally appropriate in handwritten, typeset or typed texts..." this was definitely written in a different era.
+
+/* From what I can gather, he asserts that the next 700 Programming Languages will be syntactic refinements of LISP.  I think he was wrong in this sense.  */
+
+P160: Column 1, (3) "...The abstract machine underlying ISWIM is aimed at...minimum of hardware dependence"
+  /* coupled with the earlier garbage collection comment, I think this is all forshadowing the Virtual Machine */
+
+P160: Column 1, (4) "...'rec' for self-referencial definitions (not to be mistaken for a warning about recursive activation, which can of course also arise from self-application, and without self-reference)"
+  /* Uh, wtf is 'rec'? */
+
+on the contributions of LISP to CS:
+  (a) LISP simplified the equivalence relations that determine the extent to which pieces of program can be interchanged without affecting the outcome.
+  (b) LISP brought the class of entities that are denoted by expressions a programmer can write nearer to those that arise in models of physical systems and in mathematical and logical systems.
+
+/* "...nearer to those that arise in models of physical systems..."  We've stepped back away from this, no?  The Design Patterns movement, and its "hangover" are definitely a step away from "what works best is that which maps to the physical world" */
+
+P160: Column 2, 7, 2nd Paragraph:  "The author believes that expressive power should be by design rather than accident, and that there is great point in equivalences that hold without exception."
+  /* I missed the point, does he believe there should only ever be "one way" or is he in support of multiple (albeit, planned) ways to get the same thing done? *? */
+
+P161, Column 1, last paragraph:  "The author thinks that the fruitful development to encompass all ISWIM will depend on establishing "safe" areas of an ISWIM expression, in which imperative features can be disregarded.  The usefulness of this development will depend on how successfully ISWIM'S nonimperative features supersede conventional programming."
+  /* I don't understand much of the previous discussion, but it sounds like he is preparing this language to "straddle the fence" in both imperative and functional programming worlds */
+
+P162, Column 1, 8. Application and Denotation:  "...(c) the thing an expression denotes, i.e., its "value", depends only on the values of its sub-expressions, not on other properties of them...lies behind the evolutionary trand towards "bigger righthand sides" in place of strings of small, explicitly sequenced assignments and jumps"
+  /* Compilers and JIT has overcome this, no?  My code may look sequential, but the JIT and processor figure out whether portions of it can actually run in parallel, right? */
+
+P162, Column 2:  FINALLY, what he is talking about all along is that..."wine".equals( "wi" + "ne" )
+
+P162, Column 2, 9. Note on Terminology:  
+  /* Is he complaining about the common labels that are put on languages?  Functional vs Imperitive vs Declarative */
+
+Declarative languages are just not imperative (says Wikipedia).
+  Declarative programs express what the program should accomplish without prescribing how to do it in terms of sequences of actions to be taken
+
+Imperative languages
+  Sequence of statements is significant as these statements change State
+
+P163, Column 2: "...an emphasis on describing things in terms of other things leads to the same kind of requirements as an emphasis against explicit sequencing."
+  /* I really wish I understood this, I think it is important! */
+
+/* Even though I didn't know the definition of "recalcitrant", once I looked it up I found the quote "One interesting observation is that the most recalcitrant uses of explicit sequencing appear to be associated with success/failure situations and the action needed on failure." */
