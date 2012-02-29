@@ -74,3 +74,8 @@ P163, Column 2: "...an emphasis on describing things in terms of other things le
   /* I really wish I understood this, I think it is important! */
 
 /* Even though I didn't know the definition of "recalcitrant", once I looked it up I found the quote "One interesting observation is that the most recalcitrant uses of explicit sequencing appear to be associated with success/failure situations and the action needed on failure." */
+
+
+NEXT UP:
+  Mar 13 - Stuart Maclean:  Can Programming Be Liberated from the von Neumann Style? - John Backus
+  Mar 13 - Stan Dyck:  Lisp: Good News, Bad News, How to Win Big - Richard Gabriel
