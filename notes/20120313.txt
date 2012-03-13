@@ -1,0 +1,119 @@
+"Can Programming be Liberated from the von Neumann Style?  A Functional Style and Its Algebra of Programs" - John Backus, 1977
+
+"Conventional programming languages are growing ever more enormous, but not stronger.  Inherent defects at the most basic level cause them to be both fat and weak..."
+  /* He comes out swinging */
+
+He calls out as problematic
+  1.  Close coupling of semantics to state transitions
+  2.  Division of programming into a world of expressions and a world of statements
+  3.  Inability to use powerful combining forms for building new programs from existing ones
+  4.  Lack of useful mathematical properties for reasoning about programs
+
+/* I think 3 is no longer an issue.  We routinely build programs out of existing programs and libraries that extend other libraries, no? */
+
+/* Regarding 2...the solution is, what...no statements and only expressions? */
+
+P2, Col 1, Para 2:  "...only one state transition occurs per major computation"
+
+/* It is interesting how, in 1977, a languages complexity is considered to be a function of the length of its Manual */
+
+/* This is the 2nd time we've heard this..."conventional languages create unnecessary confusion in the way we thing about programs" */
+
+P2, Col 2, Para 3:  "...that basic defects in the framework of conventional languages make their expressive weakness and their cancerous growth inevitable"
+  /* "and their cancerous growth inevitable".  To me, the truth of this statement persists through today...all the popular computer languages are Von Neumann style...functional remains a backwater */
+
+2.2 Classification of Models
+  Three Classes
+    1.  Simple Operation Models
+    2.  Applicative Models
+    3.  Von Neumann Models
+
+  Simple Operation Models
+    Turning machines
+    Automata
+
+  Applicative Models
+    Church's Lambda Calculus
+    Curry's system of combinators
+    Pure Lisp
+    
+
+  Von Neumann Models
+    Conventinal Programming Languages
+    /* In 1977 I think these are FORTRAN, COBOL, Pascal, PL/I, C, BASIC, Lisp */
+
+P3, Col 2, Para 1:  Definition of Von Neumann computer
+  Computer has 3 parts
+    1.  CPU
+    2.  A Store
+    3.  A connected tube that can transmit a single word between the CPU and the Store
+
+  /* He brands this tube "the von Nuemann bottleneck" */
+
+  The task of a program is to change the contents of the Store in some major way.
+
+  He asserts that memory addressing and how the CPU interacts with Memory keeps us all thinking "word-at-a-time" instead of encouraging us to think in terms of the larger conceptual units of the task at hand.
+  /* I wonder, and actually believe, that we are moving beyond this.  On one coputer, yes, we still thing "word-at-a-time", but today we do build systems that transcend single computers and we pass data around these systems using mutliple "tubes" simultaneously"...has Cloud Computing broken us out of the "von Neumann bottleneck"? */
+
+P3, Col 2, Para 3:  "Thus programming is basically planning and detailing the enormous traffic of words through the von Neumann bottleneck, and much of that traffic concerns not significant data itself but where to find it."
+  /* I think this part remains true through today. */
+
+"Our 30 year old belief that there is only one kind of computer is the basis of our belief that there is only one kind of programming language"
+
+"Von Neumann programming languages...
+  "...use variables to imitate the computer's storage cells"
+  "...control statements elaborate its jump and test instructions"
+  "...and assignment statements imitate its fetching, storing, and arithmetic.
+    "...assignment statement is the yon Neumann bottleneck of programming languages and keeps us thinking in word-at-a-time terms in much the same way the computer's bottleneck does."
+
+"...the assignment statement splits programming into 2 worlds"
+  Right Sides of assignments
+    an orderly world of expressions
+    where the useful work gets done
+  Left Sides of assignments
+    a disorderly world with its primitive constructs of loops, subscripts, and branching flow of control
+
+The only thing he sees wrong with the Applicative Model is its lack of Storage
+  /* From my perspective, it lacks "learnability" as well, much in the same way that not everyone can do math */
+
+On Page 4 he does a Procedural vs Functional smack-down.  By the languages of the day, he is correct in that the for loop looks ungainly, but today we see what are essentiall "map" operations popping up in all manner of non-functional languages.  I am not yet sold on the superiority of functional over von Neumann style if all he has is the lack of map.
+
+/* Ah...so it is the von Neumann languages of the day that cause much of his grief...*/
+  "...von Neumann languages always seem to have an immense framework and very limited changeable parts."
+  /* I will argue that, by the time we get to Java and C, for that matter, the framework to changeable parts ratio was tipping in the direction of changeable parts */
+    /* Uh, oh...670 page JSL7 spec may be counterargument.  I think he would like to see this in the less than 100 page range */
+
+/* By Page 6/29 I am having difficulty figuring out why is is so against "aliasing".  What is so wrong with giving something a name, or another name? */
+
+P7, Col 1, Para 3:  "...I regret the need for the above negative...For this reason I have tried to analyze some of the basic defects of conventional languages and show that those defects cannot be resolved unless we discover a new kind of language framework."
+  /* I contend that new language frameworks have been discovered that allow basically von Neumann languages to gain features previously though to be the domain of the FP */
+  /* Closures are one such feature, no? */
+  /* Languages like Groovy have .each and a family of functions that work on Collections giving them map like capabilities */
+  /* Scala Traits allow for composition, no? */
+
+P7, Col 1, Para 4, Section 10:  "...a system cannot be history sensitive...unless the system has some kind of state"
+  /* He goes on to passionately denouce the need to allow every computation to change state, but how to do otherwise?  If one can, why not all? */
+
+Applicative State Transition (AST)
+  a) A functional style of programming without variables
+  b) An algebra of functional programs
+  c) A Formal Functional Programming System
+
+"All the functions of an FP system are of one type: they map objects into objects and always take a single argument"
+  /* Uh, oh..."single argument" makes no sense.  How is he even going to be able to do simple addition of 1 + 1? */
+
+/* I don't like where this is going..."if one constantly invents new combining forms to suit the occassion...one will not become familiar with the style or useful properties of the few combining forms that are adequate for all purposes".  He is actually pitching that only the framework should be used, and not extended? */
+
+/* I understood the grammar in section 11 up until "Examples of primitive functions", from then on, WTF? */
+
+/* It is interesting to note that his language uses 'x' to denote multiplication and his "unnamed variables" are always called 'x' in the description, this makes the description of the multiplication primitive x:x, which is the universal emiocon for "dead after getting bitten by a vampire" */
+
+/* by Transpose my confusion is complete.  Our single argument is 'x', but we yield a 'y', where did 'y' come from and how does this grammar define what it in it? */
+
+11.2.4  Functional Forms, F
+  A functional form is an expression denoting a function; that function depends on the functions or objects which are parameters of the expression.
+
+/* I am becoming of the mind that the 2nd reason that FP has failed to gain mainstream popularity is that it cannot be rendered in ASCII.  Maybe, more than just not everyone is good at math and algebra, the fact that you couldn't express it without resorting to non ascii characters */
+
+P12, Column 1, Para 3:  "...FP systems offer an escape from conventional word-at-a-time programming...because they provide a more powerful set of functional forms within a unified world of expressions."
+  /* I don't get it or don't believe it.  Since a function must yield a value and always take an argument, and functional forms seem to express a strong sequence of application, how is this NOT work-at-a-time by its strict rules of structure? */
