@@ -1,0 +1,63 @@
+Arguments and Results - James Nobel
+1997
+http://www.laputan.org/pub/patterns/noble/noble.pdf
+
+/* Wow, you could make a wingdings iteration out of that site:  http://www.laputan.org.  Big Ball of Mud is here as well. */
+
+"This paper presents six patterns which describe how object protocols can be designed or redesigned.  By using these patterns, programs and designs can be made more simple, more general, and more easy to change"
+
+These patterns focus on two aspects of of protocol design:
+  - the messages objects can receive
+    Patterns about Arguments
+  - the results objects return in response to the messages
+    Patterns about Results
+
+Each fragment has a common structure
+
+"...generally, solutions which are easy to write are more likely to be chosen by programmers, and solutions which are easy to read are likely to be easier to maintain..." /* OK, but I don't think I believe the "easier to write" scenario so much */
+
+"...the patterns are concerned with complexity or size of a design"
+  - the number of messages an object understands
+  - the number of arguments needed by a message
+
+"The patterns prefer complexity to be handled once in server objects, rather than many times in every client object which uses the servers"
+
+Pattern
+  1.  Arguments Object
+      How can you simpify a complex protocol that has a regular argument structure?  Make an Arguments Object to capture the common parts of the protocol.
+
+  2.  Selector Object
+      How can you simplify a protocol where several messages differ mainly in their names?  Make a single message taking an object representing the message selector as an extra argument
+      /* This one is a little counter-intuitive, at least for me. */
+
+  3.  Curried Object
+      How can you simplify an extremely complicated protocol?  Send simpler messages to an intermediary which elaborates them within its context.
+
+  4.  Result Object
+      How can you manage a difficult answer to a difficult question?  Make a Result Object the whole answer to the question.
+
+  5.  Future Object
+      How can you answer a question while you are thinking about something else?  Make a Future Object which computes the answer in parallel.
+
+  6.  Lazy Object
+      How can you answer a question that is easy to answer now, but that may never be asked?  Make a Lazy Object which can answer the question later, if necessary.
+
+  ArgumentsObject
+    SelectObject extends ArgumentsObject
+    CurriedObject extends ArgumentsObject
+
+  ResultObject
+    FutureObject extends ResultObject
+    LazyObject extends ResultObject
+
+  /* So we are really only talking about 2 patterns each with 2 specializations */
+
+P 2, Para 1:  "Designs with high cohesion and low coupling are more flexible...easier to maintain"
+
+P 2, Para 1:  "Representing a concept explicitly as an object generally makes it easier to identify the concepts within the design, to change the implementation of the concept if necessary, and to reuse the concept elsewhere, especially if the object represents a real concept from the program's application domain."
+
+P 2, Para 2:  "A common principal underlies all these patterns - that designs can often be improved by introducing (finding) additional objects from with the program"
+  /* I think that this paragraph is rather insightful and has been true in my practice */
+
+P 3, Para 1:  "Portland form...each begins with a question...describing a problem, followed by one paragraph describing the patterns conent, and a second desribing the forces the pattern resolves.  A boldface "Therefor:" introduces a summary of the solution in detail.  Then follows examples...a But section can contain liabilities..."
+

@@ -11,10 +11,12 @@ Feb 28 - Dan Kirkdorffer:  The Next 700 Programming Languages - P. J. Landin
 Feb 28 - Doug Pearson:  Reflections on Trusting Trust - Ken Thompson
 
 Mar 13 - Stuart Maclean:  Can Programming Be Liberated from the von Neumann Style? - John Backus
-Mar 13 - Stan Dyck:  Lisp: Good News, Bad News, How to Win Big - Richard Gabriel
+Mar 13 - Michael Yin:  An experimental evaluation of the assumption of independence in multiversion programming - John Knight and Nancy Leveson
 
-Mar 27 - Michael Yin:  An experimental evaluation of the assumption of independence in multiversion programming - John Knight and Nancy Leveson
 Mar 27 - Steve Lewis:  Arguments and Results - James Noble
+Mar 27 - Paul Hill:   NoSQL Data Modeling Techniques (http://highlyscalable.wordpress.com/2012/03/01/nosql-data-modeling-techniques/) - Ilya Katsov
 
 Apr 10 - Nicole Lewis:  A Laboratory For Teaching Object-Oriented Thinking - Kent Beck, Ward Cunningham
 Apr 10 - Joe Bowbeer:  Programming as an Experience: the inspiration for Self - David Ungar, Randall B. Smith
+
+Apr 24 - Stan Dyck:  Lisp: Good News, Bad News, How to Win Big - Richard Gabriel
