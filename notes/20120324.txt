@@ -64,8 +64,89 @@ P 3, Para 1:  "Portland form...each begins with a question...describing a proble
 
 
 Patterns about Protocols
-  "If you have a procedure with 10 parameters, you probably missed some" - Alan Perlis
-  
+
+Arguments Object
+  How can you simplify a complex protocol that has a regular argument structure?
+
   Make and Arguments Object to capture the common parts of the protocol.
 
+  "If you have a procedure with 10 parameters, you probably missed some" - Alan Perlis
   /* Hmmm.  I think I've seen this spiral out of control reducing a Protocol of 5 methods, each taking the same arguments into 1 method taking one argument which is a subclass of the Arguments Object and the classname defines what should happen */
+  /* Also, "the usual messages to access and update its variables..."...not if your a fan of immutable */
+  /* I think I agree with the consequence assertion "...the resulting protocols are usually easier to learn and read" */
+
+Selector Object (extends Arguments Object)
+  How can you simplify a protocol where several messages differ mainly in their names?
+    /* Uh, oh...in the above I called this "out of control" */
+
+  "Protocols where many messages perform similar functions are often difficult to learn and use..."
+
+  "Make a single message taking an object representing the message selector as an extra argument..."
+    /* WARNING, WARNING, DANGER, Will Robinson! */
+    /* Isn't this just a variant (or an instance of) the Command Pattern? */
+
+  /* I would have a hard time arguing against his example, but I have seen this go too far, but when? */
+
+  /* You could also argue this allows the Methods to be Verbs and the arguments are Nouns on which the Verbs act...no? */
+
+  /* By page 6, the subclasses have arrived */
+
+  /* I agree that dispatch within your single message handler becomes the next challenge.  There is also the version challenge when the client JAR and the server JAR drift apart */
+
+Curried Object (extends Arguments Object)
+  How can you simplify an extrememly complicated protocol?
+
+  "Send simpler messages to an intermediary (a Curried Object) which elaborates them within its context."
+
+  "Curried Object stores the constant or slowly varying arguments from the original protocol, and provides a simpler protocol with these arguments eliminated..."
+    /* some of the more modern languages just do this, no?  Haskell?  Groovy?  My gut instinct at this point is that trying to do this in plain-jane Java is going to make your protocol more difficult to read, not less. */
+
+  P8, Para2:  "Programmerss need to know about both the original server and the Curried Object, and understand the distinctions between them, in particular, which message to set to which object"
+
+  "Iterators are the most common kind of Curried Object..."
+    /* This I did not know, or I never thought of it that way */
+
+  /* I like how the paper comes around to the "Server" providing an Abstract Factory to create the Curried Object */
+
+
+Patterns about RESULTS
+
+Results Object
+  How can you store and manage a difficult answer to a difficult question?
+
+  Make a Result Object the whole answer to the question
+
+  /* Hmmm.  I don't see what is so novel about this.  Am I missing something? */
+
+  /* On the other hand, I totally endorse ResultObject when you need no only the Result but some Context that went into getting the Result.  He says "...package the decisions it returned with the logic supporting the decisions..." */
+
+  P10, Last Paragraph:  "Result Objects are often used to provide Error Handling...allows errors to be queue as they occur, and displayed later to the user"
+    /* I FREAKING LOVE THIS!  But how is it best achieved and doesn't it introduce the old C-like...
+if ( status != 0 ) {
+  
+} else {
+  // deal with errors...
+}
+     */
+
+Future Object (extends Results Object)
+  How can you answer a question while you think about something else?
+
+  Make a Future Object which computes the answer in parallel.
+
+  /* He's got the Future object doing everything, including starting the Thread, defensive copy of the arguments, blocking clients if they ask for the answer before it is ready. */
+  /* In Java, an executor does the threading, no?...and there is no automagic defensive copy of arguments, but the Future itself is returned from the exector and can be asked if its done and all that. */
+
+  /* I thought it rather astute that bringing a Future into the mix makes your clients deal with concurrency, or at least aware of it through Exception and the like. */
+
+  "...this pattern should only be applied when the parallel computation is independent of the rest of the program."
+
+Lazy Object
+  How can you answer a question that is easy to answer now, but may never be asked?
+
+  "A Lazy Object is a Result Object which does not start its computation until the answer is requested."
+
+  "...the Lazy Object...should cache any information which may change between the time it is created and the time it is used...when it is accessed, the Lazy Object should calculate and cache the result..."
+    /* That's a lot of overhead, no?  Further, caching up the arguments but not doing the result then-and-there creates a time consistency problem between when this operation was started and when its result was requested */
+
+/* OVERALL...the best paper so far */
