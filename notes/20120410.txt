@@ -1,0 +1,25 @@
+Notes for Apr 10 Meeting
+
+A Laboratory For Teaching Object-Oriented Thinking
+Kent Beck, Apple Computer, Inc.
+Ward Cunningham, Wyatt Software Services, Inc.
+
+http://c2.com/doc/oopsla89/paper.html
+
+OOPSLA Oct. 1989
+
+CRC Cards
+  Characterize objects by...
+    - Class name
+    - Responsibilities
+    - Collaborators
+
+"...give up the global knowledge of control...Novice designs are littered with regressions to global thinking: global variables, unnecessary pointers, ..."
+  /* hmmm...IoC...I'm looking at you */
+
+"The Class Name of an object creates a vocabulary for discussing a design"
+
+"Responsibilities identify the problems to be solved"
+  "The responsibilities of an object are expressed by a handful of short verb phrases, each containing an active verb"
+
+"...Collaborators objects which will send or be sent messages in the course of satisfying responsibilities"
