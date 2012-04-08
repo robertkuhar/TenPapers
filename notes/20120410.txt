@@ -23,3 +23,19 @@ CRC Cards
   "The responsibilities of an object are expressed by a handful of short verb phrases, each containing an active verb"
 
 "...Collaborators objects which will send or be sent messages in the course of satisfying responsibilities"
+  "No Object is an Island"
+  /* "Collaboration is not necessarily a symetric relationship...", I thought this an astute observation */
+
+CRC cards
+  /* Portability and System Independence are properties...I found this funny, for some reason. */
+
+"...design of the cards tends to progress from knows to unknowns..."
+
+"Ragu Raghavan has said that in the switch to objects strong programmers become stronger, but weaker programmers are left behind."
+  /* Hmm.  There's something about this statement that bugs me, but I can't put my finger on it.  Are we sure the "weak" are "weak", or would they rather be Functional? */
+
+/* I love the observation the author makes that the physical cards make the people involved in the process more invested in it somehow */
+
+Done
+
+
