@@ -115,3 +115,28 @@ Type Declarations:
 
 "When investigating a new language, your old habits can lead you astray."
 
+
+3.  The User Interface and Programming Environment
+
+Self is "pure object-oriented language, because it uses objects and messages to achieve the effects of flow control, variable scoping, and primitive data types"
+  /* How can it have "primitive data-types" if it is pure object-oriented? */
+
+  Structural Reification and Live Editing
+
+  define: Reify - Verb - Make (something abstract) more concrete or real
+
+3.1:  Structural Reification
+  Fundamental display object in Self is the "Morph"
+    - Greek for Thing
+    - Prototype Systems usually provide generic examples of abstractions
+      /* I like this */
+    - "This is an important part of Structural Reification:  there are no invisible display objects"
+  Submorph layout is strictly Row:Column
+
+3.2:  Live Editing
+  Live Editing simply means that any object can be directly changed by the user at any time
+  "meta menu" pops-up on 3rd mouse button event over any morph that is pointed to
+
+  /* "Outliner" sounds like an old-school Properties sheet to me. */
+
+START HERE, ROB...3.3 Page 9/23
