@@ -36,6 +36,82 @@ CRC cards
 
 /* I love the observation the author makes that the physical cards make the people involved in the process more invested in it somehow */
 
-Done
 
+
+Programming as an Experience:  The Inspiration for Self
+Randall B. Smith
+David Ungar
+
+1995
+ECOOP '95 Proceedings of the 9th European Conference on Object-Oriented Programming
+
+Self attempts to integrate intellectual and non-intellectual apsects of programming to create an overall experience
+
+"Language semantics embed a programmer in a uniform world of simple objects that can be modified without appealing to definitions of abstractions"
+  /* What does this mean? */
+
+My Self installation to cheetah is off to a rocky start, the /usr/bin file was not created and the /Libary/Self directory has permissions set that don't allow me to easily see its content.  Methinks they already went overly abstract.
+
+"...the Self programmer lives and acts in a consistent and malleable world of objects."
+
+Prototype model:
+  "...just as a button can be added to any graphical object, so can a method be added to any individual object in the language, without needing to refer to a class"
+
+Self began at PARC, then Stanford, and most recently Sun.
+
+Objects consist of Slots
+  A Slot has a Name and a Value
+    Slot Names are always Strings
+    Slot Values can be any Object
+  A Slot marked with an asterix is a Parent
+
+  When sending a message, if no Slot Name matches within the recieving Object, its Parent's Slots are searched.
+
+In Self, any object can be regarded as a method; a "data" object contains code that merely returns itself.
+
+/* Uh, oh.  They are losing me at "assignment".  Page 3, Para 2 */
+
+"...sought to unifiy assignment and computation...assignment slots..."
+  "x:" and "y:" are assignment slots
+  assignment slots contain a specialized method symbolized by the arrow 
+    x:->10 /* Maybe? */
+
+  "...experience and manipulation are intertwined; we best experience an object  when we can touch it, pick it up, turn it over, push its buttons"
+
+  "any object may pretend to be a container while employing a different implementation" /* What? */
+
+  "...the design of slots in Self has proven challenging because of the unified access to state and behavior"
+    "...this behavior of method objects means that they cannot be directly manipulated because they would run"
+      /* Functions are first-class objects? */
+
+    Mirrors are a method if indirectly mentioning methods without running them
+    Mirrors are "...encapsulators of reflective operation"
+
+  "A Self assignment slot is a slot containing a special primitive...which uses the name of the slot to find a corresponding data slot in the same object.
+
+
+Type Declarations:
+  "Self therefore distinguishes between concrete and abstract types"
+    Concrete types (embodied by maps)
+      - completely hidden from the Self programmer
+      - available only to the implementation
+
+    Abstract types
+      - visible to the Self programmer
+
+"We now believe that when features, rules, or elaborations are motivated by particular examples, it is a good bet that their addition will be a mistake."
+
+"Consistency and malleability.  When there is only one way of doing things, it is easier to modify and reuse code."
+  /* Scala deviates from this, no? */
+
+"Consistency leads to reuse, reuse leads to conciseness, conciseness leads to understanding.  That is why we feel that it is hard to justify any type system that impedes reusability; the resultant duplication leads to a bigger program that is then harder to understand and to get right. Such type systems can be self-defeating."
+
+"In Self, a change to a prototype (such as a new slot) will not affect anything other than the prototype itself (and its subsequent direct copies).  So we have implemented a "copy-down" mechanism in the environment to share implementation information."
+  /* Interesting */
+  "...some functionality omitted from the language may go back into the environment."
+    This leads to some complexity, there are now two interfaces for adding slots to objects
+      1. Language Level
+      2. Copy-down Object Level
+
+"When investigating a new language, your old habits can lead you astray."
 
