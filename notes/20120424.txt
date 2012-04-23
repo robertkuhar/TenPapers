@@ -1,0 +1,153 @@
+2012-04-22
+
+"Open Decision-Making" by John Ousterhout
+http://www.stanford.edu/~ouster/cgi-bin/decisions.php
+September 2009
+
+The author proposes "a framework for decision-making" which will...
+  - allow you to make good decisions consistently and effectively
+  - with a high degree of buy-in from the people who will have to implement
+
+Closed approach
+  - involves few people
+  - little or no input from the implementors
+  - made in a hierarchical or autocratic fashion
+
+Open approach
+  - involves many people
+  - input from everyone including implementors
+  - bottom-up approach
+
+His is an open approach
+
+Basic Philosophy
+  "...the most reliable way to make good decisions is to capture the collective wisdom of a large group of people rather than relying upon one or a few people...allow consensus to emerge where it exists." - 2nd Paragraph, 2nd to last sentence
+  - Consensus is easier to achieve than you might think
+  - You don't have to control decisions as much as you think
+  - Encouraging controversy early in the process results in better decisions than controversy later
+    /* Haven't we heard this before as an argument for up-front design? */
+
+Goals
+  The process used for making a decision should produce 3 results
+    1. Make the best possible decision
+    2. Do it efficiently
+       - the decision should be reached quickly
+    3. Get buy-in for implementation
+
+/* I like how he points out that these goals are actually in opposition to each other...to "make the best possible decision" you need to collect the most information which negatively affects the "reach it quickly" goal.  The trade-off here is called "risk" */
+
+Steps to a Decision
+  1. Collect input widely
+  2. Facilitate Concensus
+  3. Announce the decision clearly
+  4. Don't reconsider the decision unless there is significant new information
+
+
+Input
+
+/* Asking for input improves "buy-in" */
+
+"Committees are unable to make the tough trade-offs required for simple and elegant solutions."
+
+broad-narrow-broad
+  First "broad" is a *brainstorming* session with everyone bringing input, identifying problems and potential approaches to solutions
+  Next "narrow" addresses the problems in smaller teams, as small as one-person, pick a specific approach and flesh out the details
+  Final "broad" reviews the proposals and identifies the strenghts and weaknesses.
+  If revision is needed, go "narrow" again reviewing the results in a "broad".
+
+"If you are not prepared to make changes after a round of feedback then you haven't asked for input, you've asked for agreement...does not improve either decision quality or buy-in"
+
+"...be sure to involve the most opinionated people early"
+/* I'm not sure I agree with what he asserts are the benefits of this, but the "the controversial approach might turn out to be right...game changing..." aspect is interesting and, in startups at least, usually is the spark and difference between those that go and those that don't. */
+
+"It is important to get the broad input AND do it quickly enough that it doesn't delay the outcome"
+  /* One of the few merits of my current manager is that he likes to "time bound" everything.  Everyone gets a chance at input, but we are making a decision on such-and-such a day.  "Speak now, or forever hold your peace." */
+
+
+Consensus
+
+Sometimes referred to as "Analysis Paralysis"
+
+"If a collection of smart people all look at the same problem with the same iformation, and if they have the same goals, then they are likely to reach the same conclusion"
+  /* AHA.  Here's the challenge.  Are all the participants equally "smart" and do they all have the same "goals".  His conclusion here is undeniable, however...*/
+
+"A decision with stong concensus is more valuable than one without concensus: it is more likely to be right, and is more likely to get implemented effectively because everyone believes in it. */
+
+Use a straight vote in a meeting environment
+  - everyone can hear the arguments and respond
+  - each person can identify who shares their views; its easier to accept a decision you don't like if you can see that no one else shares your viewpoint.
+
+Manage the Discussion
+  - Frame the problem clearly along with the criteria for evaluating the options
+    -- if people don't agree on the problem or the goal, they are unlikely to agree on a solution.
+  - Display the choices and arguments for and against in a place everyone can see
+  - Be inclusive in what you display.  LEAVE THEM ALL UP
+  - Don't allow arguments to be repeated.
+    /* I think I like this one, or rather it is new to me.  I've seen this one thing derail otherwise productive meetings */
+    -- Discussion is over when no-one has any new arguments
+
+He recommends the votes be public and on the lines of "choose the best two".
+
+Make a record of the votes and the arguments to resolve disagreements later.
+
+"I am continually surprised at how often we have highly polarized discussions with no apparent agreement, and yet when the votes come in there is a clear concensus"
+
+60-40 is not clear concensus
+  If engineering all votes one way, and marketing votes another...there is no clear concensus regardless of the numbers.  There is departmental conflict that must be resolved.
+
+Don't waste time trying to force a concensus when there isn't one; management breaks the deadlock and makes a decision (like when the VP actually has to cast his vote in the Senate).
+
+What if Management thinks that the concensus is "wrong".  Override, but look out.  Do this too often and your process will be viewed as a "sham".
+  "The group is usually right."
+
+/* Quote of the paper, right here... */
+  THE BEST DECISIONS ARE RECOGNIZED, NOT MADE.
+
+
+Annoucement
+  Summarize the results of the poll with the team that made the decision
+  Wiki-ize the arguments, the poll, the results, and the decision
+  Email all the stakeholders the summary of the decisio
+
+  The goal is to eliminate surprise: if someone in the future is surprised to hear about a decision, then you didn't announce it widely enough.
+
+
+Reconsideration
+  Don't reconsider a decision without significant new information.
+  ...however...
+  be prepared to correct decisions that have been wrong.
+  "A wrong decision that is quickly corrected causes little or no damage, but a wrong decision that is not corrected can be catestrophic"
+
+/* I really like the weighted Hire/No Hire vote system.  No 6s, No hire. */
+
+"When I look back on decision processes that have not worked well, I can almost always identify one or more steps in the open process that were skipped or abbreviated."
+
+/* I LOVE THE FEAR OF FEEDBACK DISCUSSION...and I have a name to associate with it David Snelling */
+
+"Bad decisions tend to get more expensive over time."
+
+Stealth Decision
+
+Premature Conclusion
+  Don't short circuit the process because you think the discussion was all converging on X.  Let the team decide this with a question like...
+    "It sounds like everyone is headed in the same direction here: is anyone proposing a solution other than X?  Can anyone think of a reason why we shouldn't just adopt X now?"
+    This question is actually a yes/no poll.
+
+When the Process Works and Doesn't Work
+  Open Decision-making works best in the presence of these two key attributes
+    1. A culture that encourages constructive disagreement
+    2. A general agreement on the organization's overall goals
+
+/* Wow...I now have another question I should always ask when its my turn for questions in an interview process.  How are decisions made around here? */
+
+"Open decision-making makes the most sense for decisions that are more important, affect more people, or are difficult to change once made."
+
+The Dictator
+
+"...there is a clarity and simplicity to an organization run by a dictator, since all significant decisions are shaped by a single person's viewpoint."
+
+Conclusion
+  "Manage the process, not the outcome; the outcome will take care of itself"
+
+"The open approach encourages interaction and discussion, and it creates a sense of community."
+
