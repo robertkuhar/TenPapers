@@ -115,3 +115,66 @@ Type Declarations:
 
 "When investigating a new language, your old habits can lead you astray."
 
+
+3.  The User Interface and Programming Environment
+
+Self is "pure object-oriented language, because it uses objects and messages to achieve the effects of flow control, variable scoping, and primitive data types"
+  /* How can it have "primitive data-types" if it is pure object-oriented? */
+
+  Structural Reification and Live Editing
+
+  define: Reify - Verb - Make (something abstract) more concrete or real
+
+3.1:  Structural Reification
+  Fundamental display object in Self is the "Morph"
+    - Greek for Thing
+    - Prototype Systems usually provide generic examples of abstractions
+      /* I like this */
+    - "This is an important part of Structural Reification:  there are no invisible display objects"
+  Submorph layout is strictly Row:Column
+
+3.2:  Live Editing
+  Live Editing simply means that any object can be directly changed by the user at any time
+  "meta menu" pops-up on 3rd mouse button event over any morph that is pointed to
+
+  /* "Outliner" sounds like an old-school Properties sheet to me. */
+
+/* I do think it is interesting how any slot can be either a method or just data (rawColor example, P14/23) */
+
+/* The user has to manually propogate the new rawColor method to all the existing atoms or only has to do this once, to the parent? Figure 10 */
+
+/* I like the live-editing aspect of it.  It does feel "natural" (even though I'm not actaully running it). */
+
+
+3.4 Issues
+
+Only one outliner at a time!?!  Bummer.
+
+/* AHHH!  I don't get the whole "Text and Object" stuff */
+
+
+3.5 Summary
+
+  Structural Reification - assures that the graphical relationships at play in a particular arrangement of submorphs is namifest directly in display objects on the screen
+  Live Editing - there is no "edit" and "run" modes.  Objects are always available for immediate and direct editing
+
+
+4.  Implementation
+
+Self has 2 compilers; one for speed, one for optimization.
+  /* Isn't this JIT? */
+
+Methods get "instrumented" and invocations are counted
+  /* weighted by time spent in the method or just raw invocation count? */
+
+"...and force him to consider the difference between the program as written and what really runs"
+  /* Interesting insight */
+
+"...in order to debug her program"
+  /* Sexist...only the chicks have bugs in their programs? */
+
+"...Implementation as deception..."
+  /* I think this view is the most interesting of the entire paper */
+
+/* Didn't wholly get the "even the if object can be overridden" commentary in 4.3 */
+
