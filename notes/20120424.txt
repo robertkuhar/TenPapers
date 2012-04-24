@@ -273,4 +273,42 @@ Lisp environment failures
   ...
   7. environments are not multi-user when almost all interesting software is now written in groups
 
-BEGIN AT 3.1 Continue Standardization Progress
+3.1 Continue Standardization Progress
+  /* Author sees not point in doing anything but finishing the standardization process of Common Lisp, then moving on to tackle tooling (delivery and integration) "in spades" using the New Jersey model...I think */
+
+3.2 Retain the High Ground in Environments
+  /* Author stresses the need for Lisp environments to "not discriminate against non-Lisp programmers the way existing environments do.  Lisp is not the center of the world." */
+
+He recommends Kernel + Libraries structure to improve integration...
+  "...extend their tools to Lisp, but it certainly won't happen until our (exceptional) language is implemented more like ordinary ones".
+
+P19, 2nd to last Paragraph:  "There is no necessary requirement that an environment be limited to working only with raw source text."
+  /* I'm in support of this insight.  Is this the precursor to DSLs?  Are REPLs really just environments in which the raw source text is used to build higher level DSLs? */
+  /* Intereting observation, google for "building DSLs" and note that most of the results are 2009.  Was there a spike in interest and then, nothing? */
+
+3.6 The Next Lisp
+  "I think there will be a next Lisp..." /* Look how wrong you can be */
+
+  Segmented into 4 layers
+    1. Kernel Language
+       - small
+       - simple to implement
+       - reconsider the need to support dynamic redefinition at this level
+       - conditionals, function calling, primitive data structures, macros, single values, basic object-oriented support
+    2. Linguistic layer
+       - likely to require dynamic redefinition here
+       - multiple values, advanced object-oriented support
+       - "difficult programming constructs that are too important to leave to environment to provide."
+    3. Library
+       - Most of what is in Common Lisp is here
+       - Sequence functions, elaborate IO functions, etc
+       - These functions should be linkable
+    4. Environment
+       - epilinguistic features
+       - defmethod from CLOS would be defined here.
+
+3.7 Help Application Writers Win
+  "The Lisp community has too few application writers"
+    /* Truer words were never spoken */
+
+Conclusion:  Strangely enough, I liked this paper, if only for the worse-is-better philosophy.  Who named it that?  It seems like most of the Agile movement is pretty much this idea.  Which camp do you thing Google falls into?
