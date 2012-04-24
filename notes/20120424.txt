@@ -151,3 +151,70 @@ Conclusion
 
 "The open approach encourages interaction and discussion, and it creates a sense of community."
 
+
+"Lisp:  Good News, Bad News.  How to Win Big" by Gabriel
+January 1994
+
+Celebration of Common Lisp or CL
+
+MacLisp has nothing to do with Macinstosh
+
+He blames the lack of uptake of Lisp on perception
+  - unplaced or misplaced resources
+  - projects not undertaken
+
+/* I don't like the direction here. */
+
+/* AI shortcomings get blamed on Lisp?  I did not know of the link between AI and Lisp. */
+
+Lisp's Successes
+  1. Standard Lisp
+     - It took 10 years to get here
+     - Not all Lisp dialects were included.  None from outside the US.
+     - Companies sprang up to put Lisp on stock hardware to compete against Lisp machine companies
+     /* Even in 1986 this Lisp standardization effort was already changing Lisp to stave off OO "advantages"? */
+
+  2. Good Performance
+     - compiler optimizations
+     - GC and multitasking
+
+  3. Good Environments
+     /* He seems to claim that all computing that came after Lisp is actually the direct beneficiary of Lisp because they came from the same labs that were doing AI research?!?  There is some logical fallacy of equivication or something there but I can't put my finger on it. */
+     - Environments exist that don't require dedicated hardware seems to be the premiss of his argument.
+
+  4. Good Integration
+     - can call and be called by C, Pascal, Fortran.
+     /* I'll give him that. */
+
+  5. OOP
+     /* He sees this as a benefit?  Current thinking seems to be that OO is the source of all evil! */
+     - Multiple Inheritance
+       /* I say, unsafe at any speed */
+     - Generic functions and multi-methods
+     - First-class classes
+     - First-class generic functions
+     - Metaclasses
+     - Method combination
+       /* What is this?  Sounds interesting. */
+       /* http://www.gigamonkeys.com/book/object-reorientation-generic-functions.html */
+       /* The 5 minute conclusion is that this is a side benefit of Generic functions and multi-methods.  Something about an "effective method" being gin'ed up a runtime from all the candidate methods */
+     - Initialization protocols
+
+  6. Delivery
+     /* This is a success?!?  That you can run a program developed in Lisp? */
+
+Lisp's Apparent Failures
+  /* Not it actual failures, the apparent ones */
+  Two opposing software philosophies
+    1.  The Right Thing
+    2.  Worse is Better
+
+  MIT/Stanford style of design
+    Design must get all of the following characteristics right
+      Simplicity
+        Both interface and implementation, although Interface is more important
+      Correctness
+      Consistency
+      Completeness
+
+  Worse is Better
