@@ -209,12 +209,68 @@ Lisp's Apparent Failures
     1.  The Right Thing
     2.  Worse is Better
 
-  MIT/Stanford style of design
+  The Right Thing (MIT/Stanford style of design)
     Design must get all of the following characteristics right
       Simplicity
         Both interface and implementation, although Interface is more important
       Correctness
+        Correctness is non-negotiable
       Consistency
+        Consistency over Simplicity
       Completeness
+        Completeness over Simplicity
 
-  Worse is Better
+  Worse is Better (New Jersey approach)
+      Simplicity
+        Simplicity is paramount.
+        Simplicity of Implementation over Interface
+      Correctness
+        Desirable, but not at the expense of Simplicity
+      Consistency
+        Desirable, but less common cases can be dropped in favor of Simplicity
+      Completeness
+        Completeness can be sacrified for any of the other attributes
+
+  /* Author's credibility has reached zero.  He is trying pure political manipulation now. */
+      Unix and C are the examples here.  Time has shown that this can work, no?
+
+  "I believe that worse-is-better...has better survival characteristics than the-right-thing...when used for software"
+
+  The case for worse-is-better appears to be built around 50-80% of what you want is all you really need.
+  
+  "Unix and C are the ultimate compuer viruses"
+
+  "A further benefic of the worse-is-better philosophy is that the programmer is conditioned to sacrifice some safety, convenience, and hassle to get good performance and modest resource use"
+
+  "...worse-is-better software will first gain acceptance, second will condition its users to expect less, and third will e improved to a point that is almost the-right-thing"
+    /* Arrogance is what I detect here.  This clown is arrogant and looking down his nose at the unwashed masses of programmers that allow themselves to be conditions and expect less and be happy for what they get.  I do not like this guy. */
+  "...a tradition of integration springs up..." because it the systems are not actually powerful enough to build complex monolithic software in.  Hmm?
+
+  The case for the-right-thing seems to be that it takes long to design and longer to implement and is, consequently, complex as a result.
+
+"It is often undesirable to go for the-right-thing first.  It is better to get half of the-right-thing available so that it spreds like a virus.  Once people are hooked on it, take the time to improve it to 90% of the-right-thing".
+
+  Lisp was created as the-right-thing, to its detriment
+
+  Good Lisp Programming is Hard
+    "In Lisp it is very easy to write programs that perform very poorly; in C it is almost impossible to do that."
+      /* Don't know that I believe the C part of this */
+
+    /* Poor Knowledge of the Implementation example is pathetic.  Do do Lisp well you need to know the implementation?  Yuk! */
+
+    /* He really does stick it to the-right-thing Lisp.  "Lisp must adapt, not the other way around." */
+
+"Files are used to keep persistent data - how 1960's"...what does this mean?
+
+Lisp environment failures
+  1. window-based but not well integrated
+  2. sessions are not persistent...when they do perist anything, its just in Files
+  3. no multilingual support
+  4. no support for software development lifecycle
+     - no docs
+     - no specs
+     - no customer support
+  ...
+  7. environments are not multi-user when almost all interesting software is now written in groups
+
+BEGIN AT 3.1 Continue Standardization Progress
