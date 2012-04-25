@@ -61,7 +61,7 @@ broad-narrow-broad
 /* I'm not sure I agree with what he asserts are the benefits of this, but the "the controversial approach might turn out to be right...game changing..." aspect is interesting and, in startups at least, usually is the spark and difference between those that go and those that don't. */
 
 "It is important to get the broad input AND do it quickly enough that it doesn't delay the outcome"
-  /* One of the few merits of my current manager is that he likes to "time bound" everything.  Everyone gets a chance at input, but we are making a decision on such-and-such a day.  "Speak now, or forever hold your peace." */
+  /* One of the merits of my current manager is that he likes to "time bound" everything.  Everyone gets a chance at input, but we are making a decision on such-and-such a day.  "Speak now, or forever hold your peace." */
 
 
 Consensus
