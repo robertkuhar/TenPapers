@@ -1,4 +1,4 @@
-2012-04-22
+012-04-22
 
 "Open Decision-Making" by John Ousterhout
 http://www.stanford.edu/~ouster/cgi-bin/decisions.php
@@ -122,7 +122,7 @@ Reconsideration
 
 "When I look back on decision processes that have not worked well, I can almost always identify one or more steps in the open process that were skipped or abbreviated."
 
-/* I LOVE THE FEAR OF FEEDBACK DISCUSSION...and I have a name to associate with it David Snelling */
+/* I LOVE THE FEAR OF FEEDBACK DISCUSSION...and I have a name to associate with it.  Ask me about the VP of Technology at SadReady. */
 
 "Bad decisions tend to get more expensive over time."
 
